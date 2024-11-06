@@ -9,58 +9,42 @@ public class Player1Controller : MonoBehaviour
     private Rigidbody rb;
 
     public float jumpForce = 5f;
-    public float maxJumpForce = 10f;
     public float moveSpeed = 5f;
 
-    private bool isGrounded = false;
+    private bool isGrounded;
     public Transform feetPos;
-    public float checkRadius;
+    public float checkRadius = 0.2f;
     public LayerMask whatIsGround;
 
-    private float jumpTimeCounter;
-    public float JumpTime;
-    private bool isJumping;
+    // Mouse look settings
+    public Transform cameraTransform;
+    public float mouseSensitivity = 100f;
+    private float xRotation = 0f;
 
-    //scenechanger
+    // Scene and teleport variables
     public string sceneName;
-
-    // Teleport target
     public Transform teleportTarget;
 
     void Start()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+        Cursor.lockState = CursorLockMode.Locked;  // Locks the cursor to the center of the screen
     }
 
     void Update()
     {
+        HandleMouseLook();
+        HandleMovement();
+
+        // Jumping logic
         isGrounded = Physics.CheckSphere(feetPos.position, checkRadius, whatIsGround);
-        if (isGrounded && Input.GetButtonDown("Jump2"))
+        if (isGrounded && Input.GetButtonDown("Jump"))
         {
-            isJumping = true;
-            jumpTimeCounter = JumpTime;
             Jump();
         }
 
-        if (Input.GetButton("Jump2") && isJumping)
-        {
-            if (jumpTimeCounter > 0)
-            {
-                Jump();
-            }
-            else
-            {
-                isJumping = false;
-            }
-        }
-
-        if (Input.GetButtonUp("Jump2"))
-        {
-            isJumping = false;
-        }
-
-        // Quit Stuff
+        // Quit game
         if (Input.GetButtonDown("Reset"))
         {
             Debug.Log("GameQuit");
@@ -68,36 +52,43 @@ public class Player1Controller : MonoBehaviour
         }
     }
 
-    void Jump()
+    void HandleMouseLook()
     {
-        rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
-        jumpTimeCounter -= Time.deltaTime;
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+
+        xRotation -= mouseY;
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f);  // Limit vertical look angle
+
+        cameraTransform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        transform.Rotate(Vector3.up * mouseX);
     }
 
-    void FixedUpdate()
+    void HandleMovement()
     {
-        // Only allow movement when the player is in the air
-        if (!isGrounded)
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+
+        // Calculate movement direction relative to the player's facing direction
+        Vector3 moveDirection = (transform.right * horizontalInput + transform.forward * verticalInput).normalized;
+
+        // Apply movement by setting the Rigidbody's velocity
+        rb.velocity = new Vector3(moveDirection.x * moveSpeed, rb.velocity.y, moveDirection.z * moveSpeed);
+
+        // Animator control
+        if (moveDirection != Vector3.zero)
         {
-            float horizontalInput = Input.GetAxis("HorizontalTwo");
-            float verticalInput = Input.GetAxis("VerticalTwo");
-
-            Vector3 moveDirection = new Vector3(horizontalInput, 0, verticalInput).normalized;
-
-            if (moveDirection != Vector3.zero)
-            {
-                rb.MovePosition(transform.position + moveDirection * moveSpeed * Time.fixedDeltaTime);
-                animator.SetTrigger("Walk");
-            }
-            else
-            {
-                animator.SetTrigger("Idle");
-            }
+            //animator.SetTrigger("Walk");
         }
         else
         {
-            animator.SetTrigger("Idle");
+            //animator.SetTrigger("Idle");
         }
+    }
+
+    void Jump()
+    {
+        rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
     }
 
     void OnCollisionEnter(Collision collision)
@@ -106,10 +97,8 @@ public class Player1Controller : MonoBehaviour
         {
             isGrounded = true;
         }
-
         if (collision.gameObject.CompareTag("Win"))
         {
-            // Change scene
             ChangeScene();
         }
     }
@@ -118,7 +107,6 @@ public class Player1Controller : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            // Teleport the player to the teleportTarget position
             if (teleportTarget != null)
             {
                 transform.position = teleportTarget.position;
@@ -139,7 +127,6 @@ public class Player1Controller : MonoBehaviour
         }
     }
 
-    // Scene handler
     public void ChangeScene()
     {
         SceneManager.LoadScene(sceneName);

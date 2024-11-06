@@ -1,0 +1,487 @@
+fileFormatVersion: 2
+guid: f6287a254e4520d49bbdd8eeaf5d4351
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMasterTextureLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+    spritePosition: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: Monster
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 268
+      y: 4
+      width: 93
+      height: 120
+    spriteID: 99e864a6174898d4598607d9b4ca6d32
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 268, y: 4}
+    spritePosition: {x: 2, y: 6}
+  - name: HandTexture
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 324
+      y: 176
+      width: 37
+      height: 42
+    spriteID: 3f3530c94f2d0eb4a88112b4da29d3c2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 324, y: 176}
+    spritePosition: {x: 91, y: 15}
+  - name: Bullet
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 350
+      y: 226
+      width: 2
+      height: 6
+    spriteID: 572df1246c8cb6344bea1b61c8e6680a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 350, y: 226}
+    spritePosition: {x: 140, y: 64}
+  - name: Gund
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 268
+      y: 176
+      width: 48
+      height: 47
+    spriteID: caa6b09583d4c3f4e9d375c485dad34c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 268, y: 176}
+    spritePosition: {x: 148, y: 21}
+  - name: Hotbar
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 268
+      y: 132
+      width: 84
+      height: 36
+    spriteID: dc923cb6dafb01e47a63f59aa129805f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 268, y: 132}
+    spritePosition: {x: 146, y: 70}
+  - name: Heart_Broken
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 369
+      y: 85
+      width: 16
+      height: 18
+    spriteID: 73c0c44e8154a74498e3c52f217cddb8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 369, y: 85}
+    spritePosition: {x: 199, y: 43}
+  - name: Heart
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 324
+      y: 226
+      width: 18
+      height: 18
+    spriteID: 38483c5695e74084f846bfcec79abcc8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 324, y: 226}
+    spritePosition: {x: 199, y: 25}
+  - name: AngryHead
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 369
+      y: 4
+      width: 42
+      height: 48
+    spriteID: 01bbdfc4c4cc1394da22eb48c0be696e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 369, y: 4}
+    spritePosition: {x: 95, y: 78}
+  - name: crosshair
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 369
+      y: 60
+      width: 17
+      height: 17
+    spriteID: 09b7fcc34cb4b7040937782a13732f62
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 369, y: 60}
+    spritePosition: {x: 64, y: 100}
+  - name: Palett
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 268
+      y: 231
+      width: 39
+      height: 11
+    spriteID: 048e97482ecf0a740aca5acc77b298df
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 268, y: 231}
+    spritePosition: {x: 91, y: 0}
+  - name: Bakgrund
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 256
+      height: 128
+    spriteID: e7098e77aeff4e841bf3df052d128338
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 0, y: 0}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    boneReadOnly: 0
+  sharedRigSpriteImportData: []
+  sharedRigCharacterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    boneReadOnly: 0
+  platformSettings: []
+  mosaicLayers: 1
+  characterMode: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  layerMappingOption: 2
+  generatePhysicsShape: 0
+  paperDollMode: 0
+  keepDupilcateSpriteName: 1
+  skeletonAssetReferenceID: 
+  pipeline: {instanceID: 0}
+  pipelineVersion: 
+  spriteCategoryList:
+    categories: []
+  spritePackingTag: 
+  resliceFromLayer: 0
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: Monster
+    spriteName: Monster
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 99e864a6174898d4598607d9b4ca6d32
+    layerID: 21
+    mosaicPosition: {x: 268, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: HandTexture
+    spriteName: HandTexture
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 3f3530c94f2d0eb4a88112b4da29d3c2
+    layerID: 20
+    mosaicPosition: {x: 324, y: 176}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Bullet
+    spriteName: Bullet
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 572df1246c8cb6344bea1b61c8e6680a
+    layerID: 19
+    mosaicPosition: {x: 350, y: 226}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Gund
+    spriteName: Gund
+    isGroup: 0
+    parentIndex: -1
+    spriteID: caa6b09583d4c3f4e9d375c485dad34c
+    layerID: 17
+    mosaicPosition: {x: 268, y: 176}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Hotbar
+    spriteName: Hotbar
+    isGroup: 0
+    parentIndex: -1
+    spriteID: dc923cb6dafb01e47a63f59aa129805f
+    layerID: 15
+    mosaicPosition: {x: 268, y: 132}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Heart_Broken
+    spriteName: Heart_Broken
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 73c0c44e8154a74498e3c52f217cddb8
+    layerID: 14
+    mosaicPosition: {x: 369, y: 85}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Heart
+    spriteName: Heart
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 38483c5695e74084f846bfcec79abcc8
+    layerID: 11
+    mosaicPosition: {x: 324, y: 226}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: AngryHead
+    spriteName: AngryHead
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 01bbdfc4c4cc1394da22eb48c0be696e
+    layerID: 7
+    mosaicPosition: {x: 369, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: crosshair
+    spriteName: crosshair
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 09b7fcc34cb4b7040937782a13732f62
+    layerID: 3
+    mosaicPosition: {x: 369, y: 60}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Palett
+    spriteName: Palett
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 048e97482ecf0a740aca5acc77b298df
+    layerID: 2
+    mosaicPosition: {x: 268, y: 231}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Bakgrund
+    spriteName: Bakgrund
+    isGroup: 0
+    parentIndex: -1
+    spriteID: e7098e77aeff4e841bf3df052d128338
+    layerID: 1
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  sharedRigPSDLayers: []
+  pSDLayerImportSetting: []
+  generateGOHierarchy: 0
+  textureAssetName: 
+  prefabAssetName: 
+  spriteLibAssetName: 
+  skeletonAssetName: 
+  secondarySpriteTextures: []
