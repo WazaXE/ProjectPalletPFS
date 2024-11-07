@@ -10,18 +10,17 @@ public class Player1Controller : MonoBehaviour
 
     public float jumpForce = 5f;
     public float moveSpeed = 5f;
+    public float movementForce = 200f;
 
     private bool isGrounded;
     public Transform feetPos;
     public float checkRadius = 0.2f;
     public LayerMask whatIsGround;
 
-    // Mouse look settings
     public Transform cameraTransform;
     public float mouseSensitivity = 100f;
     private float xRotation = 0f;
 
-    // Scene and teleport variables
     public string sceneName;
     public Transform teleportTarget;
 
@@ -29,7 +28,7 @@ public class Player1Controller : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
-        Cursor.lockState = CursorLockMode.Locked;  // Locks the cursor to the center of the screen
+        Cursor.lockState = CursorLockMode.Locked; 
     }
 
     void Update()
@@ -39,7 +38,7 @@ public class Player1Controller : MonoBehaviour
 
         // Jumping logic
         isGrounded = Physics.CheckSphere(feetPos.position, checkRadius, whatIsGround);
-        if (isGrounded && Input.GetButtonDown("Jump"))
+        if (isGrounded && Input.GetButtonDown("Jump2"))
         {
             Jump();
         }
@@ -58,7 +57,7 @@ public class Player1Controller : MonoBehaviour
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
         xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);  // Limit vertical look angle
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
         cameraTransform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         transform.Rotate(Vector3.up * mouseX);
@@ -66,29 +65,28 @@ public class Player1Controller : MonoBehaviour
 
     void HandleMovement()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
-
-        // Calculate movement direction relative to the player's facing direction
+        float horizontalInput = Input.GetAxis("HorizontalTwo");
+        float verticalInput = Input.GetAxis("VerticalTwo");
         Vector3 moveDirection = (transform.right * horizontalInput + transform.forward * verticalInput).normalized;
+        rb.AddForce(moveDirection * movementForce * Time.deltaTime, ForceMode.Force);
 
-        // Apply movement by setting the Rigidbody's velocity
-        rb.velocity = new Vector3(moveDirection.x * moveSpeed, rb.velocity.y, moveDirection.z * moveSpeed);
-
-        // Animator control
-        if (moveDirection != Vector3.zero)
+        // Optional Trigger
+        if (animator != null)
         {
-            //animator.SetTrigger("Walk");
-        }
-        else
-        {
-            //animator.SetTrigger("Idle");
+            if (moveDirection != Vector3.zero)
+            {
+                animator.SetTrigger("Walk");
+            }
+            else
+            {
+                animator.SetTrigger("Idle");
+            }
         }
     }
 
     void Jump()
     {
-        rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
+        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
 
     void OnCollisionEnter(Collision collision)
