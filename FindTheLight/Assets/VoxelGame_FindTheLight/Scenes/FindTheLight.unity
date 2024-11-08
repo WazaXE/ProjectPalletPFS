@@ -4024,7 +4024,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f6712ded6aaac7e4ebe35b1a1829f803, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7caec58fce3d7f64586433496922dcb1, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.745
   m_Pitch: 1
@@ -11347,7 +11347,8 @@ GameObject:
   - component: {fileID: 4051672113750844425}
   - component: {fileID: 4051672113750844424}
   - component: {fileID: 4051672113750844423}
-  - component: {fileID: 4051672113750844422}
+  - component: {fileID: 4051672113750844426}
+  - component: {fileID: 4051672113750844427}
   m_Layer: 0
   m_Name: Monster
   m_TagString: Enemy
@@ -11460,7 +11461,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3706953968661429951}
   m_LocalRotation: {x: -0, y: -0.99825096, z: -0, w: 0.059120104}
-  m_LocalPosition: {x: -331.22, y: 0.0000038146973, z: -25.9}
+  m_LocalPosition: {x: -327.59, y: 0.0000038146973, z: -17.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11469,28 +11470,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -173.221, z: 0}
---- !u!195 &4051672113750844422
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3706953968661429951}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!136 &4051672113750844423
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -11542,6 +11521,33 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &4051672113750844426
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3706953968661429951}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.52613735, z: 1.0373603}
+  m_Center: {x: -5.744605e-10, y: 1.1122568, z: 0.723521}
+--- !u!114 &4051672113750844427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3706953968661429951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae2f6dff37ba8fd4781a8ad4c2fb77c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 589519734}
+  speed: 1
 --- !u!4 &4180246659892253105
 Transform:
   m_ObjectHideFlags: 0
